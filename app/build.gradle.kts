@@ -46,7 +46,6 @@ android {
 }
 
 dependencies {
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.12")
     implementation(project(":core"))
     implementation(libs.shimmer)
     implementation(libs.androidx.appcompat)
