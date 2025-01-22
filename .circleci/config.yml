@@ -1,13 +1,17 @@
 version: 2.1
- 
+
 orbs:
   android: circleci/android@0.2.1
- 
+
 jobs:
   build:
-    executor: android/android
+    docker:
+      - image: circleci/openjdk:17-jdk  # Use Java 17
     steps:
       - checkout
+      - run:
+          name: Verify Java Version
+          command: java -version  # Confirm it's Java 17
       - restore_cache:
           key: android-orb-v1-
       - run:
