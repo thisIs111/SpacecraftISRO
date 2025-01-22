@@ -5,7 +5,12 @@ orbs:
 
 jobs:
   build:
-    executor: android/android
+    executor: 
+      name: android/android
+      resource-class: medium
+      environment:
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk
+        PATH: /usr/lib/jvm/java-17-openjdk/bin:<< pipeline.parameters.default-path >>
     steps:
       - checkout
       - restore_cache:
