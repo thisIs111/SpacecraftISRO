@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   build:
-    executor: 
+    executor:
       name: android/android
       resource-class: medium
       environment:
