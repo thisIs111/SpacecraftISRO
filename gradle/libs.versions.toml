@@ -8,6 +8,7 @@ constraintLayout= "2.1.4"
 junit = "4.13.2"
 androidxJunit = "1.2.1"
 espresso = "3.6.1"
+leakcanaryAndroid = "2.12"
 recyclerview = "1.3.2"
 material = "1.12.0"
 glide = "4.16.0"
@@ -28,6 +29,7 @@ sqliteKtx = "2.4.0"
 [libraries]
 android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
 androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqliteKtx" }
+leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryAndroid" }
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }

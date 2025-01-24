@@ -5,7 +5,6 @@ import com.mosalab.spacecraftisro.core.domain.usecase.SpacecraftUseCase
 import com.mosalab.spacecraftisro.detail.DetailSpacecraftViewModel
 import com.mosalab.spacecraftisro.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.scope.get
 import org.koin.dsl.module
 
 

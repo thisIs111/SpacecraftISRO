@@ -2,15 +2,12 @@ package com.mosalab.spacecraftisro.core.utils
 
 import android.os.Handler
 import android.os.Looper
-import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 class AppExecutors @VisibleForTesting constructor(
-    private val diskIO: Executor,
-    private val networkIO: Executor,
-    private val mainThread: Executor
+    private val diskIO: Executor
 ) {
 
     companion object{
@@ -18,16 +15,11 @@ class AppExecutors @VisibleForTesting constructor(
     }
 
     constructor() : this(
-        Executors.newSingleThreadExecutor(),
-        Executors.newFixedThreadPool(THREAD_COUNT),
-        MainThreadExecutor()
+        Executors.newSingleThreadExecutor()
     )
 
     fun diskIO(): Executor = diskIO
 
-    fun networkIO(): Executor = networkIO
-
-    fun mainThread(): Executor = mainThread
     private class MainThreadExecutor : Executor {
         private val mainThreadHandler = Handler(Looper.getMainLooper())
 
