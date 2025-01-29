@@ -18,11 +18,29 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
+        }
+//        We Having this errror
+//        BuildType 'debug' is both debuggable and has 'isMinifyEnabled' set to true.
+//Debuggable builds are no longer name minified and all code optimizations and obfuscation will be disabled.
+
+//        My Answer
+//        We should disable minification (isMinifyEnabled = false) for the debug
+//        Because Minification (isMinifyEnabled) is used to shrink and obfuscate code,
+//        which is useful for release builds but not allowed in debug builds since AGP 8.0.
+        debug {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+
+//        or we uses this
+        create("staging") {
+            initWith(buildTypes.getByName("release"))
+            isMinifyEnabled = true
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
