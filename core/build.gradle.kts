@@ -32,16 +32,16 @@ android {
 //        Because Minification (isMinifyEnabled) is used to shrink and obfuscate code,
 //        which is useful for release builds but not allowed in debug builds since AGP 8.0.
         debug {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
 //        or we uses this
-        create("staging") {
-            initWith(buildTypes.getByName("release"))
-            isMinifyEnabled = true
-            signingConfig = signingConfigs.getByName("debug")
-        }
+//        create("staging") {
+//            initWith(buildTypes.getByName("release"))
+//            isMinifyEnabled = true
+//            signingConfig = signingConfigs.getByName("debug")
+//        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
