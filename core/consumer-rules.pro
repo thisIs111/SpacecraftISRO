@@ -5,6 +5,17 @@
 -keepclassmembers,allowobfuscation class * {
     @com.google.gson.annotations.SerializedName <fields>;
 }
+-dontwarn com.mosalab.spacecraftisro.core.data.Resource$Error
+-dontwarn com.mosalab.spacecraftisro.core.data.Resource$Loading
+-dontwarn com.mosalab.spacecraftisro.core.data.Resource$Success
+-dontwarn com.mosalab.spacecraftisro.core.data.Resource
+-dontwarn com.mosalab.spacecraftisro.core.di.CoreModuleKt
+-dontwarn com.mosalab.spacecraftisro.core.domain.model.Spacecraft
+-dontwarn com.mosalab.spacecraftisro.core.domain.repository.ISpacecraftRepository
+-dontwarn com.mosalab.spacecraftisro.core.domain.usecase.SpacecraftInteractor
+-dontwarn com.mosalab.spacecraftisro.core.domain.usecase.SpacecraftUseCase
+-dontwarn com.mosalab.spacecraftisro.core.ui.SpacecraftAdapter
+
 
 # Keep all model and data classes
 -keep class com.mosalab.spacecraftisro.core.data.** { *; }

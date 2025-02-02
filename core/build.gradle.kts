@@ -37,11 +37,11 @@ android {
         }
 
 //        or we uses this
-//        create("staging") {
-//            initWith(buildTypes.getByName("release"))
-//            isMinifyEnabled = true
-//            signingConfig = signingConfigs.getByName("debug")
-//        }
+        create("staging") {
+            initWith(buildTypes.getByName("release"))
+            isMinifyEnabled = true
+            signingConfig = signingConfigs.getByName("debug")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
